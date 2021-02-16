@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/Anadian/concise-buffer/compare/v0.0.2...v0.0.3) (2021-02-16)
+
+
+### Continuous Integration
+
+* Improved code coverage. ([44e8d4a](https://github.com/Anadian/concise-buffer/commit/44e8d4ad992d4627b841e368db67e1c527f5059d))
+
+
+### Documentation
+
+* Made all the README badges a similar style. ([445874b](https://github.com/Anadian/concise-buffer/commit/445874b3a2929063e82865a5414843f52d65d44f))
+
 ### [0.0.2](https://github.com/Anadian/concise-buffer/compare/v0.0.1...v0.0.2) (2021-02-16)
 
 
