@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/Anadian/concise-buffer/compare/v0.0.1...v0.0.2) (2021-02-16)
+
+
+### Documentation
+
+* Further improved README and added API.md. ([2dc10ad](https://github.com/Anadian/concise-buffer/commit/2dc10ad8f10cf30bc804b95d169e62ac2f832b7b))
+
 ### [0.0.1](https://github.com/Anadian/concise-buffer/compare/v0.0.0...v0.0.1) (2021-02-16)
 
 
