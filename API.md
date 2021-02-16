@@ -1,6 +1,4 @@
-#!/usr/local/bin/node
-'use strict';
-/**
+
 # [concise-buffer.js](source/concise-buffer.js)
 > Concisely serialise the beginning and end of a Node Buffer.
 
@@ -32,36 +30,11 @@ Documentation License: [![Creative Commons License](https://i.creativecommons.or
 > The type notation used in this documentation is based off of the [Google Closure type system](https://github.com/google/closure-compiler/wiki/Types-in-the-Closure-Type-System).
 
 > The status and feature lifecycle keywords used in this documentation are based off of my own standard [defined here](https://github.com/Anadian/FeatureLifeCycleStateStandard).
-*/
 
-//#Dependencies
-	//##Internal
-	//##Standard
-	//##External
-//#Constants
-const FILENAME = 'concise-buffer.js';
-const MODULE_NAME = 'Concise-Buffer';
-var PACKAGE_JSON = {};
-var PROCESS_NAME = '';
-if(require.main === module){
-	PROCESS_NAME = 'concise-buffer';
-} else{
-	PROCESS_NAME = process.argv0;
-}
-//##Errors
 
-//#Global Variables
-/* istanbul ignore next */
-var Logger = { 
-	log: () => {
-		return null;
-	}
-};
-//#Functions
-/**
 ## Functions
-*/
-/**
+
+
 ### setLogger
 > Allows this module's functions to log the given logger object.
 
@@ -79,33 +52,8 @@ History:
 | version | change |
 | --- | --- |
 | 0.0.0 | Introduced |
-*/
-function setLogger( logger ){
-	var return_error = null;
-	//const FUNCTION_NAME = 'setLogger';
-	//Variables
-	//Parametre checks
-	/* istanbul ignore else */
-	if( typeof(logger) === 'object' ){
-		/* istanbul ignore next */
-		if( logger === null ){
-			logger = { 
-				log: () => {
-					return null;
-				}
-			};
-		}
-	} else{
-		return_error = new TypeError('Param "logger" is not an object.');
-		return_error.code = 'ERR_INVALID_ARG_TYPE';
-		throw return_error;
-	}
 
-	//Function
-	Logger = logger;
-	//Return
-}
-/**
+
 ### getStringFromBuffer
 > Returns a string with the first few and last few bytes of the buffer.
 
@@ -130,49 +78,4 @@ History:
 | version | change |
 | --- | --- |
 | 0.0.1 | WIP |
-*/
-function getStringFromBuffer( input_buffer, number_of_bytes = 16, options = {},){
-	var arguments_array = Array.from(arguments);
-	var _return;
-	var return_error;
-	const FUNCTION_NAME = 'getStringFromBuffer';
-	Logger.log({process: PROCESS_NAME, module: MODULE_NAME, file: FILENAME, function: FUNCTION_NAME, level: 'debug', message: `received: ${arguments_array}`});
-	//Variables
-	var beginning_string = '';
-	var ending_string = '';
-	//Parametre checks
-	if( Buffer.isBuffer(input_buffer) === false ){
-		return_error = new TypeError('Param "input_buffer" is not Buffer.');
-		return_error.code = 'ERR_INVALID_ARG_TYPE';
-		throw return_error;
-	}
-	if( typeof(number_of_bytes) !== 'number' ){
-		return_error = new TypeError('Param "number_of_bytes" is not number.');
-		return_error.code = 'ERR_INVALID_ARG_TYPE';
-		throw return_error;
-	}
-	if( typeof(options) !== 'object' ){
-		return_error = new TypeError('Param "options" is not ?Object.');
-		return_error.code = 'ERR_INVALID_ARG_TYPE';
-		throw return_error;
-	}
 
-	//Function
-	if( (2 * number_of_bytes) < input_buffer.length ){
-		beginning_string = input_buffer.toString( 'hex', 0, number_of_bytes );
-		ending_string = input_buffer.toString( 'hex', (input_buffer.length - number_of_bytes) );
-		_return = 'Buffer:[ '+beginning_string+' ... '+ending_string+' ]';
-	} else{
-		_return = 'Buffer:[ '+input_buffer.toString( 'hex' )+' ]';
-	}
-
-	//Return
-	Logger.log({process: PROCESS_NAME, module: MODULE_NAME, file: FILENAME, function: FUNCTION_NAME, level: 'debug', message: `returned: ${_return}`});
-	return _return;
-}
-//#Exports and Execution
-if(require.main === module){
-} else{
-	exports.setLogger = setLogger;
-	exports.getStringFromBuffer = getStringFromBuffer;
-}
