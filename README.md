@@ -2,9 +2,11 @@
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 [![Semantic Versioning 2.0.0](https://img.shields.io/badge/semver-2.0.0-brightgreen?style=flat-square)](https://semver.org/spec/v2.0.0.html)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=flat-square)](https://conventionalcommits.org)
-[![License](https://img.shields.io/github/license/Anadian/concise-buffer)](https://github.com/Anadian/concise-buffer/LICENSE)
+[![License](https://img.shields.io/github/license/Anadian/concise-buffer?style=plastic)](https://github.com/Anadian/concise-buffer/blob/master/LICENSE)
+[![npm](https://img.shields.io/npm/v/concise-buffer?style=plastic)](https://www.npmjs.com/package/concise-buffer)
 [![CI](https://github.com/Anadian/concise-buffer/workflows/ci/badge.svg)](https://github.com/Anadian/concise-buffer/actions?query=workflow%3Aci)
 [![Coverage Status](https://coveralls.io/repos/github/Anadian/concise-buffer/badge.svg?branch=master)](https://coveralls.io/github/Anadian/concise-buffer?branch=master)
+![David](https://david-dm.org/Anadian/concise-buffer.svg)
 
 > Concisely serialise the beginning and end of a Node buffer for logging.
 # Table of Contents
@@ -37,6 +39,10 @@ var concise_string = ConciseBuffer.getStringFromBuffer( some_buffer, 4 ); //You 
 console.log( concise_string ); //Will print: `Buffer:[ 00010203 ... 0c0d0e0f ]`
 ```
 # API
+```js
+const ConciseBuffer = require('concise-buffer');
+```
+See [API.md](API.md) for full API.
 # Contributing
 Changes are tracked in [CHANGELOG.md](CHANGELOG.md).
 # License
