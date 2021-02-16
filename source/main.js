@@ -43,7 +43,7 @@ const FILENAME = 'concise-buffer.js';
 const MODULE_NAME = 'Concise-Buffer';
 var PACKAGE_JSON = {};
 var PROCESS_NAME = '';
-if(require.main === module){
+if(require.main === module)/* istanbul ignore next */{
 	PROCESS_NAME = 'concise-buffer';
 } else{
 	PROCESS_NAME = process.argv0;
@@ -171,7 +171,7 @@ function getStringFromBuffer( input_buffer, number_of_bytes = 16, options = {},)
 	return _return;
 }
 //#Exports and Execution
-if(require.main === module){
+if(require.main === module)/* istanbul ignore next */{
 } else{
 	exports.setLogger = setLogger;
 	exports.getStringFromBuffer = getStringFromBuffer;

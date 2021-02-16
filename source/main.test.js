@@ -52,6 +52,10 @@ AVA.before( function( t ){
 	const random_buffer_1024 = FileSystem.readFileSync( 'test/random_1024.dat' );
 	t.context.random_buffer_1024 = random_buffer_1024;
 } );
+AVA('setLogger:DisableLogging', function( t ){
+	ConciseBuffer.setLogger( null );
+	t.pass();
+} );
 AVA('getStringFromBuffer:Error:InvalidParam:input_buffer', function( t ){
 	t.throws( ConciseBuffer.getStringFromBuffer.bind( null ), {
 		instanceOf: TypeError,
@@ -60,14 +64,14 @@ AVA('getStringFromBuffer:Error:InvalidParam:input_buffer', function( t ){
 	t.pass();
 } );
 AVA('getStringFromBuffer:Error:InvalidParam:number_of_bytes', function( t ){
-	t.throws( ConciseBuffer.getStringFromBuffer.bind( t.context.random_buffer_1024, false ), {
+	t.throws( ConciseBuffer.getStringFromBuffer.bind( t.context.random_buffer_1024, 'a string false' ), {
 		instanceOf: TypeError,
 		code: 'ERR_INVALID_ARG_TYPE'
 	} );
 	t.pass();
 } );
 AVA('getStringFromBuffer:Error:InvalidParam:options', function( t ){
-	t.throws( ConciseBuffer.getStringFromBuffer.bind( t.context.random_buffer_1024, 8, false ), {
+	t.throws( ConciseBuffer.getStringFromBuffer.bind( t.context.random_buffer_1024, 8, 'a string false' ), {
 		instanceOf: TypeError,
 		code: 'ERR_INVALID_ARG_TYPE'
 	} );
