@@ -1,6 +1,6 @@
 {
 	"name": "concise-buffer",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"description": "Concisely serialise the beginning and end of a Node buffer for logging.",
 	"main": "source/main.js",
 	"repository": {
